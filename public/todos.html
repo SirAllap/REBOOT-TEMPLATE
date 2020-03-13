@@ -19,7 +19,8 @@
       <ul class="navbar-nav mr-auto">
       </ul>
       <span class="navbar-text">
-        <a class="btn btn-primary" href="auth.html">LOGIN</a>
+        Hi <span id="username"></span>!
+        <a class="btn btn-primary" id="logout">LOGOUT</a>
       </span>
     </div>
   </nav>
@@ -27,13 +28,16 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <div class="jumbotron">
-          <h1 class="display-4">REBOOT TODOs!</h1>
-          <p class="lead">Welcome to the ultimate TODO list</p>
-          <hr class="my-4">
-          <p>You can keep track of all your tasks and chores in a happy and productive way</p>
-          <a class="btn btn-primary btn-lg" href="auth.html" role="button">Authenticate</a>
-        </div>
+        <h1>Welcome to Reboot Academy TODOS</h1>
+        <ul>
+          <li><input type="checkbox"> FINISH CODING</li>
+          <li><input type="checkbox"> FINISH CODING</li>
+          <li><input type="checkbox"> FINISH CODING</li>
+          <li><input type="checkbox"> FINISH CODING</li>
+          <li><input type="checkbox"> FINISH CODING</li>
+          <li><input type="checkbox"> FINISH CODING</li>
+          <li><input type="checkbox"> FINISH CODING</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -43,6 +47,7 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+  <script src="scripts/todos.js"></script>
   <script src="scripts/index.js"></script>
 </body>
 </html>

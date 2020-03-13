@@ -13,6 +13,7 @@ const userSchema = new mongoose.Schema({
         return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(value)
       }
     },
+    // TODO: Make sure unique index works from Mongoose
     unique: [true, 'This is email is registered']
   },
   password: {
