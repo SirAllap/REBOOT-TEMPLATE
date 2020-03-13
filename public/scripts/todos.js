@@ -15,9 +15,27 @@
     location.assign('index.html')
   })
 
-  document.getElementById('whoami').addEventListener('click', () => {
-    api.get('whoami', { headers: { token: localStorage.getItem('token') } }).then(response => {
-      alert(response.data)
+  document.getElementById('newTodo').addEventListener('keydown', (e) => {
+    if (e.code === 'Enter') {
+      api.post('todos',
+        { todo: document.getElementById('newTodo').value },
+        { headers: { token: localStorage.getItem('token') } }).then(response => {
+        addTodoToList(document.getElementById('newTodo').value)
+        document.getElementById('newTodo').value = ''
+      })
+    }
+  })
+
+  function addTodoToList (todo) {
+    const todosUL = document.getElementById('todosUL')
+    const todoLI = document.createElement('li')
+    todoLI.innerHTML = `<input type="checkbox"> ${todo}`
+    todosUL.appendChild(todoLI)
+  }
+
+  api.get('todos', { headers: { token: localStorage.getItem('token') } }).then(response => {
+    response.data.forEach(todo => {
+      addTodoToList(todo.task)
     })
   })
 })()
