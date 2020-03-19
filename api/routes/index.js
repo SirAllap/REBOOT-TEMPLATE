@@ -7,10 +7,19 @@ const { authUser } = require('../utils') // Authenticated Route
 
 router.use('/users', usersRouter)
 router.use('/auth', authRouter)
-router.use('/todos', todosRouter)
+router.use('/todos', authUser, todosRouter)
 
-router.get('/whoami', authUser, (req, res) => {
-  res.send(`hi there! ${res.locals.user.name}`)
+router.get('/me', authUser, (req, res) => {
+  res.json(res.locals.user)
+})
+
+const UserModel = require('../models/users.model')
+router.put('/me', authUser, (req, res) => {
+  UserModel
+    .findByIdAndUpdate(res.locals.user._id, {
+      photoUrl: req.body.photoUrl
+    })
+    .then(response => res.json(response))
 })
 
 module.exports = router

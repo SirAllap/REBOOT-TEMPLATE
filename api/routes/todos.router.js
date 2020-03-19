@@ -8,9 +8,9 @@ const {
   createTodo
 } = require('../controllers/todos.controller')
 
-router.get('/', authUser, getAllTodos)
-router.post('/', authUser, createTodo)
-router.put('/:id', authUser, updateTodo)
-router.delete('/:id', authUser, deleteTodo)
+router.get('/', getAllTodos)
+router.post('/', createTodo)
+router.put('/:id', updateTodo)
+router.delete('/:id', deleteTodo)
 
 module.exports = router

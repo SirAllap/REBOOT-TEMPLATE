@@ -30,6 +30,7 @@ const userSchema = new mongoose.Schema({
     type: Date,
     required: false
   },
+  photoUrl: String,
   createdAt: {
     type: Number,
     default: Date.now() // Get a timestamp :)
