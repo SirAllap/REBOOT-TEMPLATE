@@ -10,6 +10,7 @@ const morgan = require('morgan')
 ;(async function () {
   // MONGOOSE
   try {
+    console.log(process.env.MONGO_URL)
     await mongoose.connect(process.env.MONGO_URL, {
       dbName: process.env.MONGO_DB || 'test'
     })
